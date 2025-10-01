@@ -1,7 +1,7 @@
 var yyy = document.getElementById('xxx');
 autoSetCanvasSize(yyy)
 var context = yyy.getContext('2d');
-listenToMouse(yyy)
+listenToUser(yyy)
 
 
 /**********/
@@ -51,10 +51,43 @@ function drawLine(x1,y1,x2,y2){
 }
 
 /***********/
-function listenToMouse(canvas){
+function listenToUser(canvas){
   var using = false
   var lastPoint = {x: undefined, y: undefined}
-  canvas.onmousedown = function(aaa){
+	//特性检测
+  if(document.body.ontouchstart !== undefined) {
+	  //触屏设备
+    canvas.ontouchstart = function(){
+           var x = aaa.touchs[0].clientX
+           var y = aaa.touchs[0].clientY
+	    console.log(x,y)
+           using = true
+           if(eraserEnabled) {
+              context.clearRect(x-5,y-5,10,10)
+           }else{
+              lastPoint = {"x":x, "y":y}
+           }
+    }
+    canvas.ontouchmove = function(){
+           var x = aaa.touchs[0].clientX
+           var y = aaa.touchs[0].clientY
+           if(!using){ return }
+           if(eraserEnabled){
+              context.clearRect(x-5,y-5,10,10)
+           }else{
+           var newPoint = {"x":x, "y":y}
+              drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y)
+              lastPoint = newPoint
+           }
+
+    }
+    canvas.ontouchend = function(){
+           using = false
+    }
+
+  }else{
+	  //非触屏设备
+   canvas.onmousedown = function(aaa){
     var x = aaa.clientX
     var y = aaa.clientY
     using = true
@@ -79,4 +112,5 @@ function listenToMouse(canvas){
   canvas.onmouseup = function(aaa){
     using = false
    }
+  }
 }
