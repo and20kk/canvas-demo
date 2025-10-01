@@ -7,14 +7,39 @@ listenToUser(yyy)
 /**********/
 
 var eraserEnabled = false
+pen.onclick = function(){
+    eraserEnabled = false
+    pen.classList.add('active')
+}
 eraser.onclick = function(){
-  eraserEnabled = true
-  actions.className = "actions x"
+    eraserEnabled = true
+    eraser.classList.add('active')
 }
-brush.onclick = function(){
-  eraserEnabled = false
-  actions.className = 'actions'
+
+red.onclick = function(){
+	context.fillstyle = 'red'
+	context.strokeStyle = 'red'
+	red.classList.add('active')
+	green.classList.remove('active')
+	blue.classList.remove('active)
 }
+green.onclick = function(){
+        context.fillstyle = 'green'
+        context.strokeStyle = 'green'
+	red.classList.remove('active')
+        green.classList.add('active')
+        blue.classList.remove('active)
+
+}
+blue.onclick = function(){
+        context.fillstyle = 'blue'
+	context.strokeStyle = 'blue'
+	red.classList.remove('active')
+        green.classList.remove('active')
+        blue.classList.add('active)
+
+}
+
 
 /*************/
 function autoSetCanvasSize(canvas){
@@ -36,13 +61,11 @@ function autoSetCanvasSize(canvas){
 /***************/
 function drawCircle(x,y,radius){
   context.beginPath()
-  context.fillStyle = 'black'
   context.arc(x,y,radius,0,Math.PI*2);
   context.fill()
 }
 function drawLine(x1,y1,x2,y2){
   context.beginPath();
-  context.strokeStyle = 'black'
   context.moveTo(x1, y1)
   context.lineWidth = 5
   context.lineTo(x2, y2)
