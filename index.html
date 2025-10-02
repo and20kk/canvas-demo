@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
-<head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="./style.css">
   <script src="//at.alicdn.com/t/c/font_5034404_7uh4oc9tgaf.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="viewport" content="width=device-width">
   <title>我的画板</title>
-</head>
-<body>
   <canvas id="xxx" width=300 height=300></canvas>
   <div id=actions class="actions">
     <svg id="pen" class="active icon">
@@ -20,10 +16,9 @@
     <svg id="clear" class="icon">
       <use xlink:href="#icon-clear"></use>
     </svg>
-    <svg id="save" class="icon">
+    <svg id="download" class="icon">
       <use xlink:href="#icon-save"></use>
     </svg>
-
   </div>
   <ol class="colors">
 	  <li id="red" class="red active"></li>
@@ -35,5 +30,4 @@
 	  <li id="thick" class="thick"></li>
   </ol>
   <script src="./main.js"></script>
-  </body>
 </html>

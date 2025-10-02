@@ -1,11 +1,11 @@
 ul,ol{list-style: none;}
 *{margin: 0;padding: 0;}
 .icon {
-       width: 1em; height: 1em;
-       vertical-align: -0.15em;
-       fill: currentColor;
-       overflow: hidden;
-    }
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
 #xxx{
   background: white;
   display: block;
@@ -16,9 +16,7 @@ ul,ol{list-style: none;}
 body{
   overflow: hidden; 
 }
-html{
-  
-}
+
 .actions{
   position: fixed;
   top: 0;
@@ -36,7 +34,7 @@ html{
 }
 .colors{
 	position: fixed;
-	top: 50px;
+	top: 60px;
 	left: 28px;
 }
 .colors> li{
@@ -46,16 +44,15 @@ html{
 	box-shadow: 0 0 3px rgba(0,0,0,0.25);
 	margin: 10px 0;
 	transition: all 0.3s;
-
 }
 .colors> li.red{
 	background: red;
 }
 .colors> li.green{
-        background: green;
+  background: green;
 }
 .colors> li.blue{
-        background: blue;
+  background: blue;
 }
 .colors> li.active{
 	box-shadow: 0 0 3px rgba(0,0,0,0.95);
