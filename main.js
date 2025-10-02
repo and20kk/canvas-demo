@@ -41,14 +41,14 @@ red.onclick = function(){
 }
 green.onclick = function(){
   context.fillStyle = 'green'
-  context.stroKeStyle = 'green'
+  context.strokeStyle = 'green'
 	red.classList.remove('active')
   green.classList.add('active')
   blue.classList.remove('active')
 }
 blue.onclick = function(){
   context.fillStyle = 'blue'
-	context.stroKeStyle = 'blue'
+	context.strokeStyle = 'blue'
 	red.classList.remove('active')
   green.classList.remove('active')
   blue.classList.add('active')
